@@ -45,10 +45,21 @@ const active = ref(false);
       <div class="navbar-end" :class="{ 'is-active': active }">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
+            <a class="button is-light has-icons-left">
+              <span class="icon is-small is-left">
+                <font-awesome-icon icon="fa-solid fa-shopping-cart" />
+              </span>
             </a>
-            <a class="button is-light"> Log in </a>
+            <a class="button is-light has-icons-left">
+              <span class="icon is-small is-left">
+                <font-awesome-icon icon="fa-solid fa-heart" />
+              </span>
+            </a>
+            <a class="button is-light has-icons-left">
+              <span class="icon is-small is-left">
+                <font-awesome-icon icon="fa-solid fa-user" />
+              </span>
+            </a>
           </div>
         </div>
       </div>
