@@ -1,22 +1,23 @@
 <template>
   <main>
     <header>
-        <NavigationNavbar/>
+      <NavigationNavbar />
     </header>
     <slot></slot>
     <footer class="footer">
-  <div class="content has-text-centered">
-    <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-    </p>
-  </div>
-</footer>
+      <div class="content">
+        <p>
+          We don’t just sell shoes, we sell memories and collectibles. We
+          collect the best in the best with an attention to all little details.
+          we know that shoes speaks louder than words that’s why we’ve mastered
+          the science of good sneakers.
+        </p>
+        <p>&copy; SneakerLink</p>
+      </div>
+    </footer>
   </main>
-  
 </template>
 
 <style>
-  @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";  
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 </style>

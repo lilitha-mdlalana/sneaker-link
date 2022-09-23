@@ -29,7 +29,7 @@ store.getShoes();
           :image-url="shoe?.media?.smallImageUrl"
           :shoe-name="shoe.shoe"
           :shoe-price="shoe.retailPrice"
-          :route="`listings/${shoe.id}`"
+          :route="`products/${shoe.id}`"
         />
       </div>
     </section>

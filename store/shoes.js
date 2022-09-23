@@ -22,6 +22,8 @@ export const useShoeStore = defineStore({
   },
   getters: {
     getFirstFourShoes: (state) => state.shoes.reverse().slice(0, 4),
-    getShoeById: (state) => (productId) => state.shoes.find(productId),
-  },
+    getShoeById: (state) => {
+      return (productId) => state.shoes.find((shoe) => shoe.id === productId)
+    },
+  }
 });
