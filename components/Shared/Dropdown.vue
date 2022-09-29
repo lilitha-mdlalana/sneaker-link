@@ -2,7 +2,7 @@
 defineProps({
   dropdownTitle: String,
 });
-const isOpen = ref();
+const isOpen = ref(false);
 </script>
 <template>
   <div class="dropdown" :class="{'is-active':isOpen}">

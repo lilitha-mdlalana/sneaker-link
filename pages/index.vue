@@ -19,7 +19,7 @@ const searchForShoes = () => {
       <Title>Sneaker City</Title>
     </Head>
     <section>
-        <nuxt-link href="#" title="You'd assume this goes somewhere.But nah it doesn't">
+        <nuxt-link to="/products" title="You'd assume this goes somewhere.But nah it doesn't">
           <div class="hero">
             <img
               src="~/assets/images/new_items_banner.webp"

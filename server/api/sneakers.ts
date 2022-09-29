@@ -1,5 +1,4 @@
 export default async () => {
-  try {
     const baseUrl = "https://v1-sneakers.p.rapidapi.com/v1/sneakers";
     const data = await $fetch(`${baseUrl}?limit=100`, {
       headers: {
@@ -8,7 +7,4 @@ export default async () => {
       },
     });
     return data;
-  } catch (e) {
-    console.log(e.error);
-  }
 };

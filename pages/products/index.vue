@@ -1,8 +1,10 @@
 <script setup>
 import { useShoeStore } from "~/store/shoes";
 
-const store = useShoeStore();
-store.getShoes();
+onMounted(() => {
+  const store = useShoeStore();
+  store.getShoes();
+});
 
 const selectedValues = ref([]);
 const selectValue = () => {
@@ -20,6 +22,7 @@ const selectValue = () => {
               <label class="checkbox">
                 <input
                   type="checkbox"
+                  :value="shoe"
                   v-model="selectedValues"
                   @change="selectValue"
                 />
@@ -37,7 +40,11 @@ const selectValue = () => {
             class="column is-3"
             v-for="shoe in store.allShoes"
             :key="shoe.id"
-            :image-url="shoe?.media?.smallImageUrl"
+            :image-url="
+              shoe.media.smallImageUrl != null
+                ? shoe.media.smallImageUrl
+                : `assets/images/sneaker_not_found.jpg`
+            "
             :shoe-name="shoe.shoe"
             :shoe-price="shoe.retailPrice"
             :route="`products/${shoe.id}`"
