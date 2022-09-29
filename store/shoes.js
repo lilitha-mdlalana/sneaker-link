@@ -11,14 +11,9 @@ export const useShoeStore = defineStore({
   },
   actions: {
     async getShoes() {
-      try {
         const data = await fetch("/api/sneakers");
         const json = await data.json();
         this.shoes = json.results;
-      } catch (e) {
-        console.log(e);
-        throw new Error("Could not get products");
-      }
     },
     addSelectedShoeBrands(state, shoeBrands) {
       state.selectedBrands = shoeBrands;

@@ -35,7 +35,7 @@ const selectValue = () => {
         <div class="columns is-multiline">
           <SharedCard
             class="column is-3"
-            v-for="shoe in store.filteredShoes"
+            v-for="shoe in store.allShoes"
             :key="shoe.id"
             :image-url="shoe?.media?.smallImageUrl"
             :shoe-name="shoe.shoe"
