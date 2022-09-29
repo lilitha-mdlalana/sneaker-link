@@ -17,9 +17,9 @@ defineProps({
     </div>
     <div class="card-content">
       <div class="content">
-        <div class="card-header">
-          <p class="card-header-title">{{ shoeName }}</p>
-          <p class="card-header-subtitle">$ {{ shoePrice }}</p>
+        <div class="">
+          <p>{{ shoeName }}</p>
+          <p>$ {{ shoePrice }}</p>
         </div>
       </div>
     </div>

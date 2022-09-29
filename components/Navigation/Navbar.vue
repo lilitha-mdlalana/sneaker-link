@@ -47,17 +47,17 @@ const active = ref(false);
           <div class="buttons">
             <a class="button is-light has-icons-left">
               <span class="icon is-small is-left">
-                <font-awesome-icon icon="fa-solid fa-shopping-cart" />
+                <font-awesome-icon :icon="['fas','shopping-cart']" />
               </span>
             </a>
             <a class="button is-light has-icons-left">
               <span class="icon is-small is-left">
-                <font-awesome-icon icon="fa-solid fa-heart" />
+                <font-awesome-icon :icon="['fas','heart']" />
               </span>
             </a>
             <a class="button is-light has-icons-left">
               <span class="icon is-small is-left">
-                <font-awesome-icon icon="fa-solid fa-user" />
+                <font-awesome-icon :icon="['fas','user']" />
               </span>
             </a>
           </div>
