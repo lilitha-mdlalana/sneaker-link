@@ -1,17 +1,18 @@
 <script setup>
+import { useCartStore } from "~/store/cart";
 const active = ref(false);
+const cart = useCartStore();
+
 </script>
 
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar has-centered-menu"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img
-          src="https://bulma.io/images/bulma-logo.png"
-          width="112"
-          height="28"
-        />
-      </a>
+      <nuxt-link class="navbar-item" to="/"> Sneaker City </nuxt-link>
 
       <a
         role="button"
@@ -38,26 +39,28 @@ const active = ref(false);
 
         <a class="navbar-item"> Women </a>
         <a class="navbar-item"> Kids </a>
-        <a class="navbar-item"> Brands </a>
-
+        <nuxt-link to="products/" class="navbar-item"> Brands </nuxt-link>
       </div>
 
       <div class="navbar-end" :class="{ 'is-active': active }">
         <div class="navbar-item">
           <div class="buttons">
+            <a class="button is-light has-icons-left" @click="cart.addToCart('item')">
+    
+              <span class="icon is-small is-left">
+                <font-awesome-icon :icon="['fas', 'shopping-cart']" />
+                <span class="cart-length">{{ cart.getCartLength }}</span>
+              </span>
+            </a>
+            
             <a class="button is-light has-icons-left">
               <span class="icon is-small is-left">
-                <font-awesome-icon :icon="['fas','shopping-cart']" />
+                <font-awesome-icon :icon="['fas', 'heart']" />
               </span>
             </a>
             <a class="button is-light has-icons-left">
               <span class="icon is-small is-left">
-                <font-awesome-icon :icon="['fas','heart']" />
-              </span>
-            </a>
-            <a class="button is-light has-icons-left">
-              <span class="icon is-small is-left">
-                <font-awesome-icon :icon="['fas','user']" />
+                <font-awesome-icon :icon="['fas', 'user']" />
               </span>
             </a>
           </div>
@@ -66,3 +69,15 @@ const active = ref(false);
     </div>
   </nav>
 </template>
+
+<style scoped>
+.navbar.has-centered-menu .navbar-start {
+  flex-grow: 1;
+  justify-content: center;
+}
+.cart-length {
+  position: relative;
+  bottom: 15px;
+  right: -10px;
+}
+</style>

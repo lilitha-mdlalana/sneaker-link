@@ -1,10 +1,8 @@
 <script setup>
 import { useShoeStore } from "~/store/shoes";
 
-onMounted(() => {
-  const store = useShoeStore();
-  store.getShoes();
-});
+const store = useShoeStore();
+store.getShoes();
 
 const selectedValues = ref([]);
 const selectValue = () => {
@@ -18,11 +16,11 @@ const selectValue = () => {
         <h1 class="is-link">Filter By Brand</h1>
         <form @submit.prevent class="container">
           <SharedDropdown dropdownTitle="Brands">
-            <p v-for="shoe in store.uniqueBrands" :key="shoe" class="container">
+            <p class="container">
               <label class="checkbox">
                 <input
                   type="checkbox"
-                  :value="shoe"
+                  :value="shoeBrand"
                   v-model="selectedValues"
                   @change="selectValue"
                 />
@@ -43,11 +41,11 @@ const selectValue = () => {
             :image-url="
               shoe.media.smallImageUrl != null
                 ? shoe.media.smallImageUrl
-                : `assets/images/sneaker_not_found.jpg`
+                : `/images/sneaker_not_found.jpg`
             "
             :shoe-name="shoe.shoe"
             :shoe-price="shoe.retailPrice"
-            :route="`products/${shoe.id}`"
+            :route="`${shoe.id}`"
           />
         </div>
       </template>

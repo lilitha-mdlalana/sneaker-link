@@ -12,7 +12,7 @@
           we know that shoes speaks louder than words that’s why we’ve mastered
           the science of good sneakers.
         </p>
-        <p>&copy; SneakerLink</p>
+        <p>&copy; Sneaker City</p>
       </div>
     </footer>
   </main>

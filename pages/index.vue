@@ -7,10 +7,10 @@ store.getShoes();
 const searchForShoes = () => {
   const router = useRouter();
   router.push({
-    path: '/products',
-    query:{brands:'Jordans'}
-  })
-}
+    path: "/products",
+    query: { brands: "Jordans" },
+  });
+};
 </script>
 
 <template>
@@ -19,15 +19,18 @@ const searchForShoes = () => {
       <Title>Sneaker City</Title>
     </Head>
     <section>
-        <nuxt-link to="/products" title="You'd assume this goes somewhere.But nah it doesn't">
-          <div class="hero">
-            <img
-              src="~/assets/images/new_items_banner.webp"
-              class="image"
-              alt="New items banner"
-            />
-          </div>
-        </nuxt-link>
+      <nuxt-link
+        to="/products"
+        title="You'd assume this goes somewhere.But nah it doesn't"
+      >
+        <div class="hero">
+          <img
+            src="/images/new_items_banner.webp"
+            class="image"
+            alt="New items banner"
+          />
+        </div>
+      </nuxt-link>
       <div class="container mt-3">
         <div class="is-flex is-justify-content-space-between">
           <p>New Arrivals</p>
@@ -47,14 +50,14 @@ const searchForShoes = () => {
       </div>
     </section>
     <section>
-        <a @click="searchForShoes">
-          <div class="hero-body">
-            <img
-              src="~/assets/images/promotional_image-1.jpg"
-              alt="Jordans promotional image"
-            />
-          </div>
-        </a>
+      <a @click="searchForShoes">
+        <div class="hero-body">
+          <img
+            src="/images/promotional_image-1.jpg"
+            alt="Jordans promotional image"
+          />
+        </div>
+      </a>
       <div class="container">
         <h1>Best of Jordans</h1>
         <div class="columns is-centered m-1">
