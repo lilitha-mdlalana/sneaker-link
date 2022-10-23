@@ -45,7 +45,7 @@ const selectValue = () => {
             "
             :shoe-name="shoe.shoe"
             :shoe-price="shoe.retailPrice"
-            :route="`${shoe.id}`"
+            :route="`products/${shoe.id}`"
           />
         </div>
       </template>

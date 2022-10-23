@@ -1,5 +1,7 @@
 import { defineStore } from "pinia";
 
+import { ALL_SHOES, GET_FIRST_FOUR_SHOES } from "~/store/constants";
+
 export const useShoeStore = defineStore({
   id: "shoe-store",
   state: () => {
@@ -7,6 +9,7 @@ export const useShoeStore = defineStore({
       isLoggedIn: false,
       shoes: [],
       selectedBrands: [],
+      loading: true,
     };
   },
   actions: {
@@ -20,32 +23,34 @@ export const useShoeStore = defineStore({
         },
       });
       const data = await response.json();
-      this.shoes = data.results;
+      this.shoes = await data.results;
+      this.loading = false;
     },
     addSelectedShoeBrands(state, shoeBrands) {
       state.selectedBrands = shoeBrands;
     },
   },
   getters: {
-    allShoes: (state) => state.shoes,
-    getFirstFourShoes: (state) => state.shoes.reverse().slice(0, 4),
-    getShoeById: (state) => {
+    [ALL_SHOES]: (state) => state.shoes,
+    [GET_FIRST_FOUR_SHOES]: (state) => state.shoes.reverse().slice(0, 4),
+    [GET_SHOE_BY_ID]: (state) => {
       return (productId) => state.shoes.find((shoe) => shoe.id === productId);
     },
-    getFourJordanSneakers: (state) =>
-      state.shoes
+    [GET_FOUR_JORDAN_SNEAKERS]: (state) => {
+      return state.shoes
         .filter((shoeBrand) => shoeBrand.brand === "Jordan")
-        .slice(0, 4),
-    uniqueBrands: (state) => {
+        .slice(0, 4);
+    },
+    [UNIQUE_BRANDS]: (state) => {
       const brands = new Set();
       state.shoes.forEach((shoeBrand) => brands.add(shoeBrand.brand));
       return brands;
     },
-    includeShoeByBrand: (state) => (shoe) => {
+    [INCLUDE_SHOE_BY_BRAND]: (state) => (shoe) => {
       if (state.selectedBrands === 0) return true;
       return state.selectedBrands.includes(shoe.brand);
     },
-    filteredShoes: (state) => {
+    [FILTERED_SHOES]: (state) => {
       return state.shoes.filter((shoe) => shoe.brand === "Jordan");
     },
   },
