@@ -1,42 +1,19 @@
-# Nuxt 3 Minimal Starter
+# SneakerLink
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+SneakerLink is a product listing website that fetches products from an API and renders them. With a simple interface, the site allow users to add items to cart and checkout in seconds
 
-## Setup
+### Project requirements
 
-Make sure to install the dependencies:
+- [x]  Fetches data from an API
+- [x]  Stores API data in a store
+- [x]  Display a minimum 20 items
+- [x]  Must be responsive
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Extra features
+- [x]  Includes add to cart functionality 
+- [ ]  Has basic filtering functionality
+### Tech used
+- Nuxt
+- BulmaCSS
+- Git
+- Browser Fetch API
